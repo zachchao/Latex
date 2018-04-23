@@ -1,0 +1,107 @@
+\documentclass[12pt, letterpaper, twoside]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{ mathrsfs }
+
+
+\title{Math 260 Notes}
+\author{Zachary Chao}
+\date{April 03 2018}
+ 
+\newcommand{\real}{\rm I\!R}
+\newcommand{\domain}{\mathscr{D}}
+
+\begin{document}
+
+\maketitle
+
+\section*{Functions of several variables}
+A function which depends on two or ore variables has not just one derivative.
+\subsection*{Ex :$g(x,y,z) = \sqrt{x^2+y^2+z^2}$ (distance in $\real^3$)}
+$\domain y = \real^3$\\
+$g : \real^3 \to \real$\\
+$g \subseteq \real^3 x \real = \real^4$\\
+\\
+$f(x,y) = e^{x^2+y^2}$\\
+$f(x,y) = ln(x^2+y^2)$\\
+$f : \real^2 \to \real$\\
+$f \subseteq \real^2 x \real = \real^3$\\
+\\
+A function of n variables is a function $f(x_1, \dots, x_n)$ that assigns a real number 
+to each tuple $f(x_1, \dots, x_n) \in \real^n$. Sometimes we will write $f(p)$ for $f(x_1, \dots, x_n)$ .\\
+\\
+The domain of a function $f$ of n variables is the set of tuples  $(x_1, \dots, x_n)$  in $\real^n$ for which 
+$f$ is defined. The range of $f$ is the set of all values in $\real$ of the form  $f(x_1, \dots, x_n)$ for
+$(x_1, \dots, x_n) \in \domain f \subseteq \real^n.$\\
+\\
+\textbf{Ex : } Domain $f(x,y) = \sqrt{9-x^2-y}$\\
+we must require that $9-x^2-y \geq 0$.\\
+To find the range of $f(x,y) = \sqrt{9-x^2-y}$, set $x=0$ to obtain $f(0,y) = \sqrt{9-y}$
+$$Range = [0, \infty)$$ 
+$\forall x \in [0,\infty)$, can you find $y \in (-\infty, 9]$ such that $f(0,y)=x$?\\
+$\leftrightarrow \sqrt{9-y} = x$\\
+$\leftrightarrow 9-y = x^2$\\
+\\
+The graph of a function of two variables is the set 
+$$\Gamma f = \{(a,b,f(a,b)) : (a,b) \in \domain f\} \subseteq \real^3$$
+$f(x,y) = x^2+y^2-9=z$
+\\
+
+\section*{Traces and levels curves}
+One way of analyzing functions of several variables $f(x,y)$ is to freeze the $x$ and $y$ coordinates by setting $x=a$ and looking at the results. $(y=b)$
+
+\subsection*{Vertical Traces}
+\subsubsection*{Ex : Vertical traces of $f(x,y) = xsin(y)$}
+\begin{enumerate}
+	\item If $x=a$ then we obtain : 
+		$$f(a,y) = asin(y)$$
+		These sine waves live in the "$yz$ plane".
+	\item If $y=b$ then we have :
+		$$f(x,b) = xsin(b)$$
+		here we obtain a line of slope $sin(b)$	
+\end{enumerate}
+In addition to vertical traces, we can analyze functions of (several) two variables by looking at \underline{level curves}. There we analyze the surface given by $f(x,y)=z$ by slicing it using planes parallel to the $xy$-planes.
+$$f(x,y,z)=w$$
+Horizontal traces at height c : Intersection of the graph of $f$ with plane $z=c$.\\
+\textbf{Note - traces are vertical and levels are horizontal}\\
+\\
+$f(x,y)=ln(x^2+y^2)=z$\\
+$\domain f = \real^2$ \textbackslash \{origin\}\\
+Set $z=k$\\
+We thus obtain $ln(x^2+y^2)=k$ or $x^2+y^2=e^k$\\
+Level curves are circles, radius $e^k$ for variables $k$.
+
+\subsection*{Limits and continuity in several variables}
+Recall that in $\real, a \neq x$ is arbitrarily close to c if $| x-c |$ is arbitrarily small.\\
+In $\real^2$ a point $(x,y)$ is close to some other point $P=(a,b)$ if the distance $d((x,y),(a,b)) = \sqrt{(x-a)^2+(y-b)^2}$ is small.\\
+Notice that the set of all points $(x,y)$ at a distance less of equal than $\real$ from some point $P=(a,b)$ is the region in $\real^2$ defined by $\domain(P,R)=\{(x,y) : \sqrt{(x-a)^2+(y-b)^2} \leq \real\}$\\
+$\domain(P,R)= \{ (x,y) : (x-a)^2+(y-b)^2 \leq \real^2\}$\\
+This is called the disk centered at P of radius R. The disk without the boundary is :
+$$\domain^-(P,R)=\{(x,y): (x-a)^2+(y-b)^2<\real^2\}$$
+The punctured disk centered at $P$ at radius $R$ directed by $\domain^*(P,R)$ is given by: 
+$$\{(x,y): 0<(x-a)^2+(y-b)^2 \leq \real^2\}$$
+Assume we have a function $f(x,y)$ defined near a point $P=(a,b)$ but not necessarily at that point, i.e. assume $f$ is defined on $\domain^*(P,R) = \{(x,y):0<(x-a)^2+(y-b)^2 \leq \real^2\}$. We say that $f(x,y)$ approaches the limit L as $(x,y)$ approaches $P=(a,b)$ if $|f(x,y) - L|$ becomes arbitrarily small. When $d((x,y),(a,b)$ becomes arbitrarily small.\\
+
+\subsubsection*{Definition : Limit $(\epsilon - \delta)$}
+Assume $f(x,y)$ is defined near $P=(a,b)$ then,
+$$\lim_{(x,y) \to (a,b)} f(x,y) = L$$
+if for any $\epsilon > 0$ there exists a $\delta > 0$ such that $d((x,y),(a,b)) < \delta \rightarrow |f(x,y) - L| < \epsilon$
+
+\subsubsection*{Ex : show that $\lim_{(x,y) \to (a,b)} x = a$}
+Let $P=(a,b)$ and let $f(x,y)=x$ let $L=a$ we want to show that for any given $\epsilon>0$ there is a $\delta>0$ such that wherever $d((x,y),(a,b))<\delta$ that is whenever $\sqrt{(x-a)^2+(y-b)^2} < \delta$, we have $|x-a| < \epsilon$. Notice that $\sqrt{(x-a)^2+(y-b)^2} < \delta$ means that $(x-a)^2+(y-b)^2 < \delta^2$ ie $(x-a)^2<\delta^2$.\\
+But just pick $\delta=\epsilon$. If so, $(x-a)^2<\delta^2$. We'll obtain $(x-a)^2<\epsilon$ i.e.
+$$|x-a|<\epsilon$$
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
+
+
+

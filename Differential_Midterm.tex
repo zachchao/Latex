@@ -1,0 +1,36 @@
+\documentclass[12pt, letterpaper, twoside]{article}
+\usepackage[utf8]{inputenc}
+
+\title{Differential Equations - Midterm Review}
+\author{Zachary Chao}
+\date{March 27 2018}
+ 
+\begin{document}
+
+\maketitle
+
+\setcounter{section}{1}
+
+\section{First Order Differential Equations}
+\subsection{Linear Equations; Method of Integrating Factors}
+\subsubsection{$$y'+3y=t+e^{-2t}$$}
+
+\begin{enumerate}
+	\item This is already in the form $y'+p(t)y=g(t)$ where $p(t)=3$ and $g(t)=t+e^{-2t}$.
+	\item Recall that the integrated factor is defined as $e^{\int p(t)dt}$, therefore our integrated factor is $e^{3t}$.
+	\item We now multiply out equation by our integrated factor, rendering us $e^{3t}y'+e^{3t}3y=e^{3t}t+e^{3t}e^{-2t}$.
+	\item Reduce the left side by using the inverse chain rule, giving us $e^{3t}y\frac{dy}{dt}=e^{3t}t+e^{t}$.\\
+		\textbf{Note} The left side will always reduce to the integrated factor and $y$ as that is the purpose of it.
+	\item Multiplpy the equation by dt, $e^{3t}ydy=(e^{3t}t+e^{t})dt$.
+	\item Integrating the left side is always simple and is always the integrated factor and $y$ as it is a partial integral, $e^{3t}y=\int e^{3t}t+e^{t}dt$.
+	\item Integrate the right side by parts.
+		$$\int u\ dv = uv - \int v\ du$$
+		
+		let $u=t \ dt$ and $dv=e^{3t}$.\\
+		$du=1$ and $v=\frac{e^{3t}}{3}$.\\
+		
+
+	\item
+\end{enumerate}
+
+\end{document}

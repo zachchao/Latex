@@ -1,0 +1,158 @@
+\documentclass[12pt, letterpaper, twoside]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{ mathrsfs }
+
+
+\title{Math 260 Notes}
+\author{Zachary Chao}
+\date{April 03 2018}
+ 
+\newcommand{\real}{\rm I\!R}
+\newcommand{\domain}{\mathscr{D}}
+\newcommand{\laplace}{\mathcal{L}}
+\usepackage{amsmath}
+
+
+
+\begin{document}
+
+\section*{6.2 Solutions of IVT}
+Theorem 6.2.1 If f is continuous and f' is piecewise continuous, then
+$$\laplace\{f'(t)\}=s \laplace\{f(t)\}-f(0)$$
+
+\subsection*{Proof}
+$\laplace\{f'(t)\}=\int_0^\infty e^{-st}f'(t)dt$\\
+$u=e^{-st}    dv=f'(t)dt$\\
+$du=-se^{-st}    v=f(t)$\\
+$=e^{-st}f(t)|_0^\infty+\int_0^\infty se^{-st}f(t)dt$\\
+$=\lim_{A\to\infty}[e^{-sA}f(A)]-e^0f(0)=s\int_0^\infty e^{-st}f(t)dt$\\
+$=0-f(0+s\laplace\{f\}$\\
+$=s\laplace\{f\}-f(0)$\\
+$$\laplace\{f''\}=s^2\laplace\{f(t)\}-sf(0)-f'(0)$$
+
+\subsection*{Example 1 - Solve $y''-y'-2y=0, y(0)=1, y'(0)=0$}
+Begin by taking the Laplace transform of both sides.\\
+$\laplace\{y''-y'-2y\}=\laplace\{0\}$\\
+As the Laplace is linear we can simply distribute it to all.\\
+$\laplace\{y''\}-\laplace\{y'\}-2\laplace\{y\}=0$\\
+$s^2Y(s)-sy(0)-y'(0)-[sY(s)-y(0)]-sY(s)=0$\\
+$Y(s)$ is the transform solution we are looking for, which is a function of $t$. $y(0)$ is the solution of the function at 0. The solution we are looking for is y(t). $
+\laplace\{y(t)\}=Y(s)$\\
+Now algebraically isolate $Y(s)$\\
+$s^2Y(s)-s-0-sY(s)+1-sY(s)=0$\\
+$Y(s)[s^2-s-2]=s-1$\\
+$Y(s)=\frac{s-1}{s^2-s-2}=\frac{s-1}{(s-2)(s+1)}$\\
+We have now isolated the transform of our solution, we must untransform it to get our solution. We must now solve by partial fractions.\\
+$\frac{s-1}{(s-2)(s+1)}=\frac{A}{s-2} + \frac{B}{s+1}$\\
+$s-1 = A(s+1)+B(s-2)$\\
+$s-1=As+A+Bs+2B$\\
+$s-1=(A+B)s+(A-2B)$\\
+$A+B=1$\\
+$A-2B=-1$\\
+$B=\frac{2}{3}$\\
+$A=\frac{1}{3}$\\
+$Y(s)=\frac{1}{3}\frac{1}{s-1}+\frac{2}{3}\frac{1}{s+1}$\\
+$\laplace^{-1}\{Y(s)\}=\laplace^{-1}\{\frac{1}{3}\frac{1}{s-1}+\frac{2}{3}\frac{1}{s+1}\}$\\
+$\laplace^{-1}\{Y(s)\}=\frac{1}{3}\laplace^{-1}\{\frac{1}{s-1}\}+\frac{2}{3}\laplace\{\frac{1}{s+1}\}$\\
+You get to the next step by using the table of transforms.\\
+$\laplace^{-1}\{Y(s)\}=\frac{1}{3}e^{2t}+\frac{3}{2}e^{-t}$\\
+
+\subsection*{Example - Solve $y''+y=sin2t, y(0)=2, y'(0)=1$}
+$\laplace\{y''\}+\laplace\{y\}=\laplace\{sin2t\}$\\
+Line 5 in table of transforms.\\
+$\laplace\{sinat\}=\frac{a}{s^2+a^2}$\\
+$s^2Y(s)-sy(0)-y'(0)+Y(s)=\frac{2}{s^2+4}$\\
+$s^2Y(s)-2s-1+Y(s)=\frac{2}{s^2+4}$\\
+$Y(s)(s^2+1)=2s+1+\frac{2}{s^2+4}$\\
+$Y(s)=\frac{2}{s^2+1}+\frac{1}{s^2+1}+\frac{2}{(s^2+1)(s^2+4)}$\\
+Solve by partial fractions.\\
+$\frac{2}{(s^2+1)(s^2+4)}=\frac{As+B}{s^2+1}+\frac{Cs+D}{s^2+4}$\\
+$2=(As+B)(s^2+4)+(Cs+D)(s^2+1)$\\
+ALGEBRA SHIT\\
+$A+C=0$\\
+$B+D=0$\\
+$4A+C=0$\\
+$4B+D=2$\\
+$A=0, B=\frac{2}{3}, C=0, D=\frac{-2}{3}$\\
+$Y(s)=\frac{2s}{s^2+1}+\frac{1}{s^2+1}+\frac{2}{(s^2+1)(s^2+4)}$\\
+$Y(s)=\frac{2s}{s^2+1}+\frac{2}{3}\frac{1}{s^2+1}+\frac{2}{3}\frac{1}{s^2+1}-\frac{2}{3}\frac{1}{s^2+4}$\\
+$Y(s)=\frac{2s}{s^2+1}+\frac{5}{3}\frac{1}{s^2+1}-\frac{2}{3}\frac{1}{s^2+4}$\\
+$\laplace^{-1}\{Y(s)\}=2cost+\frac{5}{3}sint-\frac{1}{3}sin2t$\\
+
+\section*{6.3 Heavyside or Step Functions}
+\[
+  u_c(t) =
+  \begin{cases}
+  	0 & \text{, $t < c$} \\
+  	1 & \text{, $t \geq c$} \\
+  \end{cases}
+  c \leq 0
+\]
+
+\subsection*{Example 1 : Sketch the graph of $y=h(t)$, where $h(t)=u_\pi(t)-u_{2\pi}(t), t \geq 0$}
+\[
+  h(t) =
+  \begin{cases}
+  	0 & \text{, $t < \pi$} \\
+  	1 & \text{, $\pi \leq t < 2\pi$} \\
+  	0 & \text{, $t \geq 2\pi$} \\
+  \end{cases}
+\]
+
+\subsection*{The Laplace Transform of $u_c(t)$}
+$\laplace\{u_c(t)\}=\int_0^\infty e^{-st}u_c(t) dt$\\
+$\laplace\{u_c(t)\}=\int_0^c e^{-st}u_c(t) dt + \int_c^\infty e^{-st}u_c(t) dt$\\
+$\laplace\{u_c(t)\}=0 + \int_c^\infty e^{-st} dt$\\
+$\laplace\{u_c(t)\}=\frac{e^{-st}}{s}, s>0$\\
+
+\subsection*{Consider the function - }
+\[
+  y= g(t) =
+  \begin{cases}
+  	0 & \text{, $t < c$} \\
+  	f(t-c) & \text{, $t \geq c$} \\
+  \end{cases}
+\]
+
+Could instead be written by a unit step function,
+$$g(t)=u_c(t)f(t-c)$$
+
+\subsection*{Theorem 6.3.1}
+$$\laplace\{u_c(t)f(t-c)\} = e^{-cs} \laplace\{f(t)\} = e^{-cs}F(s)$$
+
+\subsection*{Proof}
+$\laplace\{u_c(t)f(t-c)\} = \int_0^\infty e^{-st}u_c(t)f(t-c)dt$\\
+We cut out from $0 \to c$ because the integral is 0 there.\\
+$\laplace\{u_c(t)f(t-c)\} = \int_c^\infty e^{-st}f(t-c) dt$\\
+$\epsilon = t-c$\\
+$dt = d\epsilon$\\
+$\laplace\{u_c(t)f(t-c)\} = \int_0^\infty e^{-s(\epsilon + c)}f(\epsilon) d\epsilon$\\
+$\laplace\{u_c(t)f(t-c)\} = \int_0^\infty e^{-s\epsilon}e^{(-sc)}f(\epsilon) d\epsilon$\\
+$\laplace\{u_c(t)f(t-c)\} = e^{-sc} \int_0^\infty e^{-s\epsilon} f(\epsilon) d\epsilon$\\
+$\laplace\{u_c(t)f(t-c)\} = e^{-cs} \laplace\{f\}$\\
+Line 13 in the transform table.
+
+
+\subsection*{Example : $f(t)=sint+e_{\frac{\pi}{4}}(t)cos(t-\frac{\pi}{4})$}
+$$\laplace\{f\}=\frac{1}{s^2+1}+e^{-\frac{\pi}{4}s}\frac{s}{s^2+1}$$
+
+\subsection*{Example 4 : Find the inverse transform of $F(s) = \frac{1-e^{-2s}}{s^2}$}
+$F(s) = \frac{1}{s^2} - \frac{e^{-2s}}{s^2}$\\
+$\laplace^{-1}\{F(s)\} = t - u_2(t)(t-2)$\\
+
+\subsection*{Homework}
+$6.2 : 1-7odd, 11-15$\\
+$6.3 : 1,3,5,7,11,13,15,21$\\
+Quiz Thursday
+
+
+
+
+
+
+
+
+\end{document}
+
+
+

@@ -1,0 +1,142 @@
+\documentclass[12pt, letterpaper, twoside]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{ mathrsfs }
+
+\usepackage{titlesec}
+
+\titlespacing\section{0pt}{12pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}
+\titlespacing\subsection{0pt}{12pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}
+\titlespacing\subsubsection{0pt}{12pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}
+
+
+\title{Math 260 Notes}
+\author{Zachary Chao}
+\date{April 03 2018}
+
+%Allows indentation for a whole paragraph
+\newenvironment{myindentpar}[1]%
+  {\begin{list}{}%
+    {\setlength{\leftmargin}{#1}}%
+    \item[]%
+  }
+{\end{list}}
+  
+
+\begin{document}
+
+\setcounter{section}{8}
+\section{Current and Resistance}
+  \subsection*{Symbols and Shit}
+    \begin{tabular}{c l c l}
+  	  \textbf{Symbol} & \textbf{Meaning} & \textbf{Unit Symbol} & \textbf{Units}\\
+      $I$ & Current & $A$ & amps\\
+      $\sigma$ & Conductivity & $\frac{1}{\Omega m}$ & inverse ohm-meter\\
+      $\rho$ & Resistivity & $\Omega m$ & ohm-meter\\
+      $Q$ & Charge & $C$ & coulombs\\
+      $P$ & Power & $W$ & watts\\
+      $W$ & Work & $J$ & joules\\
+      $J$ & Current Density & $A/m^2$ & amps per meter squared\\
+      $q_e$ & Charge of Electron & $C$ & coulomb\\
+      $n_e$ & Electron Density & electrons / area & electrons per cubic meter\\
+      $A$ & Area & $m^2$ & meters squared\\
+      $v_d$ & Drift Velocity & $m/s^2$ & average speed of electrons\\
+      $E$ & Electric Field & $N/C$ & Newtons per Coulomb\\
+      $\varepsilon$ & EMF & $V$ & Volts\\
+    \end{tabular}
+  
+  \subsection*{Equations}
+    \begin{tabular}{l c l}
+      $P$ & $=$ & $IV$\\
+      $P$ & $=$ & $I^2R$\\
+      $P$ & $=$ & $\frac{V^2}{R}$\\
+      $V$ & $=$ & $IR$\\
+      $R$ & $=$ & $\rho L / A$\\
+      $\sigma$ & $=$ & $1/\rho$\\
+      $I$ & $=$ & $q_en_eAv_d$\\
+      $J$ & $=$ & $\sigma E$\\
+      $J$ & $=$ & $I/A$\\
+    \end{tabular}
+    
+    
+  \subsection*{Prefixes}
+    \begin{tabular}{l l}
+  	  \textbf{Symbol} & \textbf{Multiplier}\\
+      $G$ & $10^9$\\
+      $M$ & $10^6$\\
+      $c$ & $10^{-2}$\\
+      $m$ & $10^{-3}$\\
+      $\mu$ & $10^{-6}$\\
+      $n$ & $10^{-9}$\\
+      $p$ & $10^{-12}$\\
+      
+    
+  \end{tabular}
+    
+  \subsection{Electrical Current - 23}
+    \subsubsection*{Question 23}
+      \begin{description}
+        \item $Q_{electron} = 1.6x10^{-19}C$
+        \item $I = \Delta Q / \Delta t$
+      \end{description}
+      
+      
+      
+  \subsection{Model of Conduction in Metals - 30}
+    \subsubsection*{Question 30}
+      \begin{description}
+        \item \textbf{a)} $J = I/A$
+      \end{description}
+  \subsection{Resistivity and Resistance - 39, 41, 42}
+    \subsubsection*{Question 39}
+      \begin{description}
+        \item $R = \rho L/A$
+        \item $\rho_{W} = 5.6$ x $10^{-8} \ \Omega m$
+      \end{description}
+    \subsubsection*{Question 41}
+      \begin{description}
+        \item $R = \rho L / A$   
+        \item $\rho_{Cu} = 1.72$ x $10^{-8} \ \Omega m$
+        \item $\rho_{Al} = 2.65$ x $10^{-8} \ \Omega m$
+      \end{description}
+    \subsubsection*{Question 42}
+      \begin{description}
+        \item $R = \rho L / A$
+        \item $I = V / R$
+        \item $\rho_{Silicon} = 6.4$ x $10^2 \ \Omega m$
+      \end{description}
+  \subsection{Ohm's Law - None}
+    Fuck Ohm's Law.
+  \subsection{Electrical Energy and Power - 57, 61}
+    \subsubsection*{Question 57}
+      \begin{description}
+        \item 14-guage means diameter = $1.63mm$
+        \item $\rho_{Nichrome} = 100$ x $10^{-8} \ \Omega m$
+        \item $I = P/V$
+        \item $R = P/I^2$
+        \item $L = RA/\rho$
+      \end{description}
+  \subsection{Superconductors - 63}
+    \subsubsection*{Question 63}
+      \begin{description}
+        \item $\rho_{Cu} = 1.68$ x $10^{-8} \ \Omega m$
+        \item The equation $P = I^2R$ gives us the amount of power dissipated through a medium. A superconductor has the property that $\sigma = \infty$. As we know that $\sigma = 1/R$, $R = 0$. So the power dissipated will also be 0.
+        \item $R = \rho L / A$
+        \item $P = I^2R$
+      \end{description}
+  \subsection*{Additional Problems - 73, 77}
+    \subsubsection*{Question 73}
+      $J = I/A$\\
+      $R = V/I$\\
+      $\rho = RA/L$
+      
+\section{Direct-Current Circuits} 
+  \subsection{Electromotive Force - None}
+  \subsection{Resistors in Series and Parallel - 26, 27, 28, 30, 31, 33}
+  \subsection{Kirchoff's Rules - 36, 37, 38, 39, 40, 43}
+  \subsection{Electrical Measuring Instruments - None}
+  \subsection{RC Circuits - 51, 52, 53}
+  \subsection{Household Wiring and Electrical Safety - None}
+  \subsection*{Additional Problems - 72, 77, 78, 84, 85}
+
+
+\end{document}

@@ -1,0 +1,190 @@
+\documentclass[12pt, letterpaper, twoside]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{ mathrsfs }
+\usepackage{amsmath}
+
+
+\title{Linear Algebra Test 2 Study Guide}
+\author{Zachary Chao}
+\date{April 10 2018}
+ 
+\newcommand{\real}{\rm I\!R}
+\newcommand{\domain}{\mathscr{D}}
+
+\begin{document}
+
+\maketitle
+Test from Chapter 3 to Chapter 4.7
+
+\setcounter{section}{2}
+\section{Determinants}
+\subsection{The Determinant of a Matrix}
+\begin{enumerate}
+\item Find the determinant of a 2x2 matrix
+\item Find the minors and cofactors of a matrix
+\item Use expansion by cofactors to find the determinant of a matrix
+\item Find the determinant of a triangular matrix
+\end{enumerate}
+
+Only square matrices have determinants.\\
+
+\subsubsection*{Definition of Minors and Cofactors of a Matrix}
+The minor $M_{ij}$ of the element $a_{ij}$ is the determinant of the matrix obtained by deleting the $i^{th}$ row and the $j^{th}$ column of A. The cofactor $C_{ij}$ is given by $C_{ij} = (-1)^{i+j}M_{ij}$.\\
+
+\subsubsection*{Expansion by cofactors}
+$$det(A) = \sum_{j=1}^n a_{ij} C_{ij}$$
+
+\subsection{Determinants and Elementary Operations}
+\begin{enumerate}
+\item Use elementary row operations to evaluate a determinant
+\item Use elementary column operations to evaluate a determinant
+\item Recognize conditions that yield zero determinants
+\end{enumerate}
+
+\subsubsection*{Definition of a Triangular Matrix}
+A triangular matrix is a matrix in which all entries above or below the main diagonal are zero. For example - \\
+
+
+\[
+\begin{bmatrix}
+ a & 0 & 0 & 0\\
+ e & f & 0 & 0\\
+ i & j & k & 0\\
+ m & n & o & p
+\end{bmatrix}
+or 
+\begin{bmatrix}
+ a & b & c & d\\
+ 0 & f & g & h\\
+ 0 & 0 & k & l\\
+ 0 & 0 & 0 & p
+\end{bmatrix}
+\]
+
+
+\subsubsection*{Determinant of a Triangular Matrix}
+If $A$ is a triangular matrix of order $n$, then its determinant is the product of the entries on the main diagonal. 
+$$det(A) = a_{11}a_{22}a_{33} \dots a_{nn}$$
+
+\subsubsection*{Elementary Row Operations and Determinants}
+\begin{enumerate}
+\item When B is obtained from A by interchanging two rows of A, $det(B) = -det(A)$
+\item When B is obtained from A by adding a multiple of a row A to another row of A $det(B) = det(A)$
+\item when B is obtained from A by multiplying a row of A by a nonzero constant c, $det(B) = c det(A)$
+\end{enumerate}
+\textbf{Note} These all hold true for columns as well.
+
+\subsubsection*{Conditions That Yield a Zero Determinant}
+\begin{enumerate}
+\item An entire row or column consists of only zeros
+\item Two rows or columns are equal
+\item One row or column is a multiple of another row or column
+\end{enumerate}
+
+\subsection{Properties of Determinants}
+\begin{enumerate}
+\item Find the determinant of a matrix product and scalar multiple of a matrix
+\item Find the determinant of an inverse matrix and recognize equivalent conditions for a nonsingular matrix
+\item Find the determinant of a transpose of a matrix
+\end{enumerate}
+
+\subsubsection*{Determinant of a Matrix Product}
+If $A$ and $B$ are square matrices of order $n$, then
+$$det(AB) = det(A)det(B)$$
+
+\subsubsection*{Determinant of a Scalar Multiple of a Matrix}
+If $A$ is a square matrix of order $n$ and $c$ is a scalar, then the determinant of $cA$ is 
+$$det(cA) = c^ndet(A)$$
+
+\subsubsection*{Determinant of an Invertible Matrix}
+A square matrix $A$ is invertible (nonsingular) if and only if $det(A) \neq 0$
+
+\subsubsection*{Determinant of an Inverse Matrix}
+If $A$ is an $nxn$ invertible matrix, then 
+$$det(A^{-1}) = \frac{1}{det(A)}$$
+
+\subsubsection*{Equivalent Conditions for a Nonsingular Matrix}
+If A is a $nxn$ nonsingular (invertible) matrix, then the following statements are equivalent.
+\begin{enumerate}
+\item $A$ is invertible
+\item $Ax=b$ has a unique solution for every $nx1$ column matrix
+\item $Ax=0$ has only the trivial solution
+\item $A$ is row-equivalent to $I_n$
+\item A can be written as the product of elementary matrices
+\item $det(A) \neq 0$
+\end{enumerate}
+
+\subsubsection*{Determinant of a Transpose}
+if $A$ is a square matrix, then 
+$$det(A^T) = det(A)$$
+
+\subsection{Applications of Determinants}
+\begin{enumerate}
+\item Use Cramer's rule to solve a system of $n$ linear equations
+\item Use determinants to find the area, volume and the equations of lines and planes
+\end{enumerate}
+
+\subsubsection*{Cramer's Rule}
+If a system of $n$ linear equations in $n$ variables has a coefficient matrix $A$ with a nonzero determinant $|A|$, then the solution of the system is 
+$$x_1 = \frac{|A_1|}{|A|}, x_2 = \frac{|A_2|}{|A|}, \dots, x_n = \frac{|A_n|}{|A|}$$
+Where $A_1$ is created by replacing the first column with the $b$ column.
+
+\subsubsection*{Area of a Triangle in the xy-Plane}
+The area of a triangle with vertices $(x_1,y_1), (x_2,y_2)$ and $(x_3, y_3)$ is 
+
+$$
+A = \pm \frac{1}{2} det
+\begin{bmatrix}
+ x_1 & y_1 & 1\\
+ x_2 & y_2 & 1\\
+ x_3 & y_3 & 1
+\end{bmatrix}
+$$
+
+\subsubsection*{Test For Collinear Points in the xy-Plane}
+Three points $(x_1,y_1), (x_2,y_2)$ and $(x_3, y_3)$ are collinear if and only if 
+$$
+\begin{bmatrix}
+ x_1 & y_1 & 1\\
+ x_2 & y_2 & 1\\
+ x_3 & y_3 & 1
+\end{bmatrix}
+= 0
+$$
+
+\subsubsection*{Two-Point Form of the Equation of a Line}
+An equation of the line passing through the distinct points $(x_1,y_1)$ and $(x_2,y_2)$ is given by 
+$$
+\begin{bmatrix}
+ x & y & 1\\
+ x_1 & y_1 & 1\\
+ x_2 & y_2 & 1
+\end{bmatrix}
+= 0
+$$
+
+\subsubsection*{Volume of a Tetrahedron}
+The volume of a tetrahedron with vertices $(x_1,y_1), (x_2,y_2) (x_3, y_3)$ and $(x_4, y_4)$ is 
+$$
+V = \pm \frac{1}{6}
+\begin{vmatrix}
+ x_1 & y_1 & z_1 & 1\\
+ x_2 & y_2 & z_2 & 1\\
+ x_3 & y_3 & z_3 & 1\\
+ x_4 & y_4 & z_4 & 1
+\end{vmatrix}
+$$
+
+
+
+
+
+
+
+
+
+
+\end{document}
+
+
+

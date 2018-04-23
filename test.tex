@@ -1,0 +1,129 @@
+\documentclass[12pt, letterpaper, twoside]{article}
+\usepackage[utf8]{inputenc}
+%\usepackage{pgfplots}%
+
+
+\title{First document}
+\author{Zachary Chao}
+\date{March 27 2018}
+ 
+\begin{document}
+
+\section*{5.2.5}
+Find power series solutions and the first four terms of those solutions $$(1-x)y''+y=0, x_0 = 0$$
+
+Set up our $y'', y'$ and $y$.
+$$ y = \sum_{n=0}^{\infty} a_0x^n $$ 
+$$ y' = \sum_{n=1}^{\infty} na_0x^{n-1} $$ 
+$$ y'' = \sum_{n=2}^{\infty} n(n-1)a_0x^{n-2} $$ 
+$$ (1-x) \sum_{n=2}^{\infty} n(n-1)a_0x^{n-2} +  \sum_{n=0}^{\infty} a_0x^n = 0$$
+Distribute the (1-x)
+$$ \sum_{n=2}^{\infty} n(n-1)a_0x^{n-2} - x\sum_{n=2}^{\infty} n(n-1)a_0x^{n-2} +  \sum_{n=0}^{\infty} a_0x^n = 0 $$
+We can distribute the x inside because a series is really a limit,
+$$ \sum_{n=0}^{\infty} a_nx^n = \lim_{n\to\infty} x \sum_{i=1}^n a_ix^i$$
+Distributing through we get
+$$ \sum_{n=0}^{\infty} (n+2)(n+1) a_{n+2} x^n - \sum_{n=0}^{\infty} (n+1)na_{n+1}x^n + \sum_{n=0}^{\infty} a_nx^n = 0$$
+Skipping some shit because Im too slow \dots
+$$ y = \sum{n=0}^{\infty}a_nx^n = a_0+a_1x+a_2x^2+a_3x^3+a_4x^4 + \dots$$
+$$    = a_0 + a_1x - \frac{a_0}{2}x^2 - \frac{a_0+a_1}{6}x^3 - \frac{\frac{a_0}{2}+a_1}{12}x^4 - \frac{\frac{a_0}{3}+\frac{5}{6}a_1}{20}x^5 + \dots$$
+$$   y = y_1 + y_2  $$
+$$ y_1 = a_0[1 - \frac{1}{2}x^2 - \frac{1}{6}x^3 - \frac{1}{24}x^4 + \dots] $$
+$$ y_2 = a_1[x - \frac{1}{6}x^3 - \frac{1}{12}x^4 - \frac{1}{24}x^5 + \dots] $$
+
+
+
+
+\section*{Chapter 6}
+\subsection*{Laplace Transform}
+Motivation - to deal with discontinous fnctions
+The laplace transform $f(t)$, defined in $[0, \infty)$, is given by $f(t) \to F(s)$
+$$F(s) = \int_0^{\infty} e^{-st}f(t) \ dt$$
+The $e^{-st}$ is what causes the improper integral to converge as it goes to zero quite quickly. 
+Note, if it was $e^{-st^2}$, the $t^2$ would go to infinity faster than the it is brought to zero 
+so there is an issue of convergence and there are cases where there will not be a Laplace transform.\\
+$$\mathcal{L} \{f\} = F$$
+
+\subsection*{ex.5 $let f(t) = e^{at}, t \geq 0$}
+$$ \mathcal{L} \{f\} = \int_0^\infty e^{-st}e^{at} \ dt$$
+$$ \mathcal{L} \{f\} = \lim_{A\to\infty} \int_0^A e^{(-s+a)t} \ dt $$
+$$ \mathcal{L} \{f\} = \lim_{A\to\infty} \int_0^A e^{-(s-a)t} \ dt $$
+$$ \mathcal{L} \{f\} = \lim_{A\to\infty} [\frac{-1}{(s-a)}e^{-(s-a)t}|_0^A] $$
+$$ \mathcal{L} \{f\} = \lim_{A\to\infty} \{\frac{-1}{(s-a)}[e^{-(s-a)A}-1]\} $$
+$$ \mathcal{L} \{f\} = - \frac{1}{(s-a)} \lim_{A\to\infty} [e^{-(s-a)A}-1] $$
+$$ \mathcal{L} \{f\} = - \frac{1}{(s-a)} [0-1], s>a $$
+$$ \mathcal{L} \{f\} = \frac{1}{(s-a)}, s>a $$
+
+
+
+\subsection*{ex : Determine the laplace transform of f(t) = 1}
+$$ \mathcal{L} \{f\} = \int_0^\infty e^{-st} 1 \ dt $$
+$$ \mathcal{L} \{f\} = \int_0^\infty e^{-st} \ dt $$
+$$ \mathcal{L} \{f\} = \lim_{A\to\infty} \int_0^\infty e^{-st} \ dt $$
+$$ \mathcal{L} \{f\} = \lim_{A\to\infty} (\frac{-1}{s})e^{-st} |_0^A $$
+$$ \mathcal{L} \{f\} = \lim_{A\to\infty} (\frac{-1}{s})[e^{-sA}-1] $$
+$$ \mathcal{L} \{f\} = -\frac{1}{s}[0-1] $$
+$$ \mathcal{L} \{f\} = \frac{1}{s}, s > 0 $$
+
+
+$$
+f(x) = \left\{
+        \begin{array}{ll}
+            1 & \quad 0 \leq t < 1 \\
+            k & \quad t = 1 \\
+	    0 & \quad t > 1
+        \end{array}
+    \right.
+$$
+
+
+
+
+
+\subsection*{idk some sidenote}
+The Laplace transform is a linear operator.
+$$ \mathcal{L} \{c_1f_1 + c_2f_2\} = c1 \mathcal{L} \{f_1\} + c_2 \mathcal{L} \{f_2\} $$
+
+\subsection*{Theorm 6.12}
+\begin{enumerate}
+	\item f is piecewise continous on $[0, \infty)$
+	\item $|f(t)| \leq ke^{at}$ for $t \geq m, k, a, m$, constants
+\end{enumerate}
+
+$f(t)$ is said to be exponential 
+
+\textbf{Hw 6.1 : 1,5ab,7,11}
+
+
+pg 317
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

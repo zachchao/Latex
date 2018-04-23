@@ -1,0 +1,66 @@
+\documentclass[12pt, letterpaper, twoside]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{ mathrsfs }
+
+
+\title{Math 260 Notes}
+\author{Zachary Chao}
+\date{April 03 2018}
+ 
+\newcommand{\real}{\rm I\!R}
+\newcommand{\domain}{\mathscr{D}}
+\newcommand{\laplace}{\mathcal{L}}
+\usepackage{amsmath}
+
+
+
+\begin{document}
+
+\section{Impulse Functions (Delta Functions)}
+$$ay'' + by' + cy = g(t)$$
+When $g(t)$ is large and over a short time interval
+$$t_0 - \tau < t < t_0 + \tau$$
+
+
+\[
+  d_\tau(t) = g(t) = 
+  \begin{cases}
+  	\frac{1}{2\tau} & -\tau < t < \tau \\
+  	0 & everywhere \ else \\
+  \end{cases}
+\]
+$I(\tau) = \int_{t_0 - \tau}^{t_0 + \tau} g(t) dt$\\
+$I(\tau) = \int_{-\infty}^{\infty} g(t) dt$\\
+\[
+  Dirac \ Delta \ Function
+  \begin{cases}
+  	\delta(t) = 0 & t \neq 0 \\
+  	\int_{-\infty}^{\infty} \delta(t) dt = 1\\
+  \end{cases}
+\]
+$\delta(t) = \lim_{\tau \to 0} d_\tau(t)$\\
+$\int_{-\infty}^\infty \delta(t) dt = \lim_{\tau \to 0} \int_{-\infty}^\infty d_\tau(t) dt$\\
+$\delta (t-t_0) = 0, t \neq t_0$\\
+$\int_{-\infty}^\infty \delta (t-t_0) dt = 1$\\
+How do we take the Laplace Transform of the Dirac Delta Function?\\
+\textbf{Define}\\
+$\laplace\{\delta (t-t_0)\} = \lim_{\tau \to 0} \delta\{d_\tau(t-t_0)\}$\\
+
+
+
+\subsection*{Final Exam}
+Tuesday May $22^{nd}$ 4-5:50
+
+
+\subsection*{Quiz Homework}
+5.1 : 21-27 odd\\
+5.2 : 1-11 odd, 15, 21a\\
+6.1 : 1, 5ab, 7, 11\\
+
+
+
+
+\end{document}
+
+
+
