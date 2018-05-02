@@ -3,6 +3,7 @@
 \usepackage{ mathrsfs }
 
 \usepackage{titlesec}
+\usepackage{circuitikz}
 
 \titlespacing\section{0pt}{12pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}
 \titlespacing\subsection{0pt}{12pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}
@@ -46,8 +47,8 @@
   
   \subsection*{Equations}
     \begin{tabular}{l c l}
-      $P$ & $=$ & $IV$\\
-      $P$ & $=$ & $I^2R$\\
+      $P_{supplied}$ & $=$ & $IV$\\
+      $P_{dissipated}$ & $=$ & $I^2R$\\
       $P$ & $=$ & $\frac{V^2}{R}$\\
       $V$ & $=$ & $IR$\\
       $R$ & $=$ & $\rho L / A$\\
@@ -77,10 +78,7 @@
       \begin{description}
         \item $Q_{electron} = 1.6x10^{-19}C$
         \item $I = \Delta Q / \Delta t$
-      \end{description}
-      
-      
-      
+      \end{description}      
   \subsection{Model of Conduction in Metals - 30}
     \subsubsection*{Question 30}
       \begin{description}
@@ -130,11 +128,46 @@
       $\rho = RA/L$
       
 \section{Direct-Current Circuits} 
+  \begin{tabular}{c c c}
+  	   & \textbf{Series} & \textbf{Parallel}\\
+      \textbf{I} \quad & $I = I_1 = I_2 = I_3 \quad$ & $I = I_1 + I_2 + I_3 \quad$\\
+      \textbf{V} \quad & $V = V_1 + V_2 + V_3 \quad$ & $V = V_1 = V_2 = V_3 \quad$\\
+      \textbf{R} \quad & $R = R_1 + R_2 + R_3 \quad$ & $\frac{1}{R} = \frac{1}{R_1} + \frac{1}{R_2} + \frac{1}{R_3}$\\
+      \textbf{Q} \quad & $Q = Q_1 = Q_2 = Q_3 \quad$ & $Q = Q_1 + Q_2 + Q_3$\\
+      \textbf{C} \quad & $\frac{1}{C} = \frac{1}{C_1} + \frac{1}{C_2} + \frac{1}{C_3} \quad$ & $C = C_1 = C_2 = C_3$\\
+    \end{tabular}
   \subsection{Electromotive Force - None}
   \subsection{Resistors in Series and Parallel - 26, 27, 28, 30, 31, 33}
+  	\subsubsection*{Question 26}
+  	  $$R_{series} = \sum R_n$$
+  	  $$\frac{1}{R_{parralel}} = \sum \frac{1}{R_n}$$
+  	\subsubsection*{Question 27}
+  	  Largest = series\\
+  	  Smallest = parallel
+  	\subsubsection*{Question 28}
+  	  $V_{parallel} = V_1 = V_2 = V_3 \quad$\\
+  	  $P = IV$
+  	\subsubsection*{Question 30}
+  	  $R_{series} = R_1 + R_2 + R_3$\\
+  	  $R = IV$\\
+  	  $P = IV$\\
+  	  \\
+  	  $\frac{1}{R_{parallel}} = \frac{1}{R_1} + \frac{1}{R_2} + \frac{1}{R_3}$\\
   \subsection{Kirchoff's Rules - 36, 37, 38, 39, 40, 43}
+    \begin{circuitikz} \draw
+	  (0,1) to[battery1] (0,-1)
+	  ;
+	\end{circuitikz}
+	Current goes from negative to positive ends of the battery, in the photo it will go from bottom to top.\\
+	With the current, negative voltage.\\
+	Against the current, positive voltage.\\
+	With a battery, positive voltage.\\
+	Against a battery, negative voltage.	  
   \subsection{Electrical Measuring Instruments - None}
   \subsection{RC Circuits - 51, 52, 53}
+    \subsubsection*{Question 51}
+      $0.1 \mu F = \tau$\\
+      $\tau = RC$
   \subsection{Household Wiring and Electrical Safety - None}
   \subsection*{Additional Problems - 72, 77, 78, 84, 85}
 
