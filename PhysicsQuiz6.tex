@@ -3,7 +3,7 @@
 \usepackage{ mathrsfs }
 
 \usepackage{titlesec}
-\usepackage{circuitikz}
+\usepackage{ upgreek }
 
 \titlespacing\section{0pt}{12pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}
 \titlespacing\subsection{0pt}{12pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}
@@ -30,10 +30,44 @@
   \subsection*{Symbols and Shit}
     \begin{tabular}{c l c l}
   	  \textbf{Symbol} & \textbf{Meaning} & \textbf{Unit Symbol} & \textbf{Units}\\
+  	  \textbf{Chapter 11} & & &\\
+  	  $T$ & Magnetic Field & N/Am & Newtons per amp meter\\
+  	  $Wb$ & Magnetic Flux & $T*m^2$ & Tesla meter squared\\
+  	  $I$ & Current & A & amp\\
+  	  $l$ & Length lol & m & meters\\
+  	  $B$ & Magnetic Field & T & teslas\\
+  	  $E$ & Electric Field & kV/m & kiloVolt per meter\\
+  	  \textbf{Chapter 12} & & &\\
+  	  $N$ & Number of Turns & None & None\\
+  	  $J$ & Current Density & $A/m^2$ & amps per meter squared\\
+      $q_e$ & Charge of Electron & $C$ & coulomb\\
+      $n_e$ & Electron Density & electrons / area & electrons per cubic meter\\
+      $v_d$ & Drift Velocity & $m/s^2$ & average speed of electrons\\
     \end{tabular}
   
   \subsection*{Equations}
     \begin{tabular}{l c l}
+    \textbf{Chapter 11} & &\\
+      $\vec{F} = (qvB sin \theta, RHR)$\\
+	  $\vec{F} = (IlB sin \theta, RHR)$\\
+      $W = \vec{F} \cdot \vec{d} = 0$\\
+      $qvB = \frac{mv^2}{r}$\\
+      $eE = ev_dB$\\
+      $I = nev_dA$\\
+      $V_{hall} = IBl / neA$\\
+      $E = Bc$\\
+      \textbf{Chapter 12} & &\\
+      $\vec{B} = (\frac{\mu_0}{4 \pi} \frac{qv sin \theta}{r^2}, RHR)$\\
+      $d \vec{B} = \frac{\mu_0}{4 \pi} \frac{Idl sin \theta}{r^2}$\\
+      $\vec{E} = \frac{1}{4 \pi \upvarepsilon_0} \frac{q}{r^2}$\\
+      $B_{infLine} = \frac{\mu_0 I}{2 \pi r}$\\
+      $B_{centerLoop} = \frac{\mu_0 I \phi}{4 \pi R}$\\
+      $F = \frac{\mu_0 I_1 I_2 l}{2 \pi r}$\\
+      $\int_{line} Bdl \cos \theta$\\
+      $\oint Bdl \cos \theta = \mu_0 I_{encl}$\\
+      $\vec{B} = \frac{\mu_0I_0N}{2L}(\sin \theta_2 - \sin \theta_1)$\\
+      $\vec{B}_{toroid} = \frac{\mu_0I_0N}{2 \pi r}$\\
+      
     \end{tabular}
     
     
@@ -48,6 +82,15 @@
       $n$ & $10^{-9}$\\
       $p$ & $10^{-12}$\\
   \end{tabular}
+  
+  \subsection*{Constants}
+    \begin{tabular}{l l}
+      \textbf{Thing} & \textbf{Value}\\
+      $Q_e$ & $1.602 \times 10^{-19}C$\\
+      $m_e$ & $9.109 \times 10^{-31}kg$\\
+      $\mu_0$ & $4 \pi \times 10^{-7}N/A^ 2$
+    
+    \end{tabular}
   
   \setcounter{subsection}{1}
   \subsection{Magnetic Fields and Lines - 15, 17, 19, 23}
@@ -67,5 +110,26 @@
   
   \subsection{Additional Problems - 59, 62, 64, 69, 81}
     
+\section{Chapter }
+
+  \subsection{The Biot-Savart Law - 17, 18, 19, 21}
+  
+  \subsection{Magnetic Field Due to a Thin Straight Wire - 25, 27, 29}
+
+  \subsection{Magnetic Force between Two Parallel Currents - 31, 33, 34}
+  
+  \subsection{Magnetic Field of a Current Loop - 38}
+  
+  \subsection{Amperes Law - 45, 46, 47, 48}
+  
+  \subsection{Solenoids and Toroids - 52, 55, 56}
+    \subsubsection*{Question 52}
+	  $$\vec{B} = \frac{\mu_0I_0N}{2L}(\sin \theta_2 - \sin \theta_1)$$
+	  First theta is angle between position and bottom of solenoid, second theta is angle between position and top of solenoid.
+      
+  
+  \subsection{Magnetism in Matter - None}
+  
+  \subsection*{Additional Problems - 67, 80, 85}
 
 \end{document}

@@ -1,0 +1,94 @@
+\documentclass[12pt, letterpaper, twoside]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{ mathrsfs }
+
+\usepackage{titlesec}
+\usepackage{ upgreek }
+
+\titlespacing\section{0pt}{12pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}
+\titlespacing\subsection{0pt}{12pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}
+\titlespacing\subsubsection{0pt}{12pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}
+
+
+\title{Math 260 Notes}
+\author{Zachary Chao}
+\date{April 03 2018}
+
+%Allows indentation for a whole paragraph
+\newenvironment{myindentpar}[1]%
+  {\begin{list}{}%
+    {\setlength{\leftmargin}{#1}}%
+    \item[]%
+  }
+{\end{list}}
+  
+
+\begin{document}
+
+\setcounter{section}{12}
+\section{Electromagnetic Induction}
+  \subsection*{Symbols and Shit}
+    \begin{tabular}{c l c l}
+  	  \textbf{Symbol} & \textbf{Meaning} & \textbf{Unit Symbol} & \textbf{Units}\\
+  	  \textbf{Chapter 13} & & &\\
+  	  $\vec{A}$ & Area Vector & $(A, \vec{n})$ & Area normal to surface\\
+  	  
+    \end{tabular}
+  
+  \subsection*{Equations}
+    \begin{tabular}{l}
+    \textbf{Chapter 13}\\
+      $\Upphi_{uniform mag field} = \vec{B} \cdot \vec{A} = BA \cos \theta$\\
+      $\Upphi_{non-uniform mag field} = \int_S \vec{B} \cdot d \vec{A} = \int_S BdA \cos \theta$\\
+      $\epsilon = N \frac{d \Upphi_M}{dt}$\\
+            
+    \end{tabular}
+    
+    
+  \subsection*{Prefixes}
+    \begin{tabular}{l l}
+  	  \textbf{Symbol} & \textbf{Multiplier}\\
+      $G$ & $10^9$\\
+      $M$ & $10^6$\\
+      $c$ & $10^{-2}$\\
+      $m$ & $10^{-3}$\\
+      $\mu$ & $10^{-6}$\\
+      $n$ & $10^{-9}$\\
+      $p$ & $10^{-12}$\\
+  \end{tabular}
+  
+  \subsection*{Constants}
+    \begin{tabular}{l l}
+      \textbf{Thing} & \textbf{Value}\\
+      $Q_e$ & $1.602 \times 10^{-19}C$\\
+      $m_e$ & $9.109 \times 10^{-31}kg$\\
+      $\mu_0$ & $4 \pi \times 10^{-7}N/A^ 2$
+    
+    \end{tabular}
+  
+  \subsection{Faraday's Law - 24, 27, 30}
+  
+  \subsection{Lenz's Law - 33, 35, 36}
+  
+  \subsection{Motional Emf - 38, 43, 45}
+  
+  \subsection{Induced Electrical Fields - 47}
+  
+\subsection{Inductance}
+  \subsection{Mutual Inductance - 29, 31, 34}
+  
+  \subsection{Self-Inductance and Inductors - 36, 39, 42}
+  
+\subsection{Electromagnetic Waves}
+  \subsubsection{Maxwell's Equations and Electromagnetic Waves - 36, 37}
+  
+  \subsubsection{Plane Electromagnetic Waves - 41, 43, 44}
+  
+  \subsubsection{Energy Carried by Electromagnetic Waves - 49, 53, 56, 57, 62}
+  
+  \subsubsection{Momentum and Radiation Pressure - None}
+
+  \subsubsection{The electromagnetic Spectrum - 74, 75, 87}
+  
+  \subsubsection*{Additional Problems - 89}
+\end{document}
