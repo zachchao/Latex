@@ -1,0 +1,35 @@
+\documentclass[12pt, letterpaper, twoside]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{ mathrsfs }
+
+
+\title{Math 260 Notes}
+\author{Zachary Chao}
+\date{April 03 2018}
+
+\newcommand{\laplace}{\mathcal{L}}
+\usepackage{amsmath}
+\usepackage{ upgreek }
+
+\begin{document}
+  \section*{Exam 1}
+    \subsection*{Problem 1}
+      $r_0$ is a point on the line.\\
+      $\vec{AB}$ is the direction vector, given by $B - A$.\\
+      Equation of a line is $\vec{r}(t) = \vec{AB}_0 + t\vec{v}$
+    \subsection*{Problem 2}
+      Find direction vectors $\vec{PQ}$ and $\vec{PR}$\\
+      With these we can create the normal vector $\vec{n}$ by doing the cross product of the two.\\
+      $\vec{n} = <a, b, c>$\\
+      Equation of a line is, $a(x-x_0) + b(y-y_0) + c(z-z_0) = 0$
+    \subsection*{Problem 3}
+      $$proj_{\vec{u}} \vec{v} = \frac{\vec{v} \cdot \vec{u}}{\vec{u} \cdot \vec{u}} \vec{u}$$
+      This is the projection of $\vec{v}$ onto $\vec{u}$ meaning that it is all parts of $\vec{v}$ in the direction of $\vec{u}$. Thus it is parallel. Subtracting it from $\vec{v}$ will give us the perpendicular vector.
+      
+    \subsection{Problem 4}
+      The normal vector would be $<0,0,1>$ so the equation would be $c(z-z_0) = 0$.
+    \subsection*{Problem 5}
+      The angle between two planes is given by the angle between their normal vectors.
+      $$\cos(\theta) = \frac{\vec{n_1} \cdot \vec{n_2}}{||\vec{n_1}|| \ ||\vec{n_2}||}$$
+      
+\end{document}
